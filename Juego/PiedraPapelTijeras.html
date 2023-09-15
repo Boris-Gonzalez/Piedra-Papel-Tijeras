@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra Papel o Tijeras</title>
+    <script>
+        function aleatorio(min,max){
+            /*PARA GENERAR EL NUMERO AREATORIO ENTRE EL MAXIMO Y MINIMO QUE LE ASIGNEMOS A LAVARIBLE OCUPAMOS LAFORMULA MATEMATICA DE ((MAXIMO - MINIMO + 1) + MINIMO).
+            EJEMPLO: MAXIMO = 10, MINIMO = 3 - LA OPERACION SERIA MATH.RANDOM() * ((10 - 3 + 1) + 3) 
+            MATH.RANDOM, LO QUE HACE ES CREAR UN NUMERO ALEATORIO ENTRE 0 Y 1 PERO NUNCA SERA 0 Y TAMPOCO 1. 
+            */  
+            return Math.floor(Math.random() * (max - min + 1)+ min)
+        }
+        // ASIGNAMOS LAS VARIABLES.
+        let jugador = 0;
+        let pc = aleatorio (1,3); // CON LA FUNCION CREAMOS NUMEROS VARIABLES QUE SIMULARAN LA RESPUESTA DE LA COMPUTADORA.
+        jugador = prompt("Escoje 1 para PIEDRA, 2 para PAPEL o 3 para TIJERAS");
+        if( jugador == 1){
+            alert("ESCOJISTE PIEDRA");
+        }else if (jugador == 2){
+            alert("ESCOJISTE PAPEL");
+        }else if(jugador == 3){
+            alert("ESCOJISTE TIJERAS");
+        }
+        if(pc == 1){
+            alert("EL PC ESCOJIO PIEDRA");
+        }else if(pc == 2){
+            alert("EL PC ESCOJIO PAPEL");
+        }else if (pc == 3){
+            alert("EL PC ESCOJIO TIJERAS");
+        }
+        // COMBATE
+        if(jugador == pc){
+            alert("EMPATE!");
+        }else if (jugador == 1 && pc == 3){
+            alert("GANASTE!");
+        }else if (jugador == 2 && pc == 1){
+            alert("GANASTE!");
+        }else if (jugador == 3 && pc == 2){
+            alert("GANASTE!");
+        }else {
+            alert("PERDISTE!");
+        }
+    </script>
+</head>
+<body>
+    <!-- Cramos un boton para refrescar el sitio web. -->
+    <a href="file:///C:/Users/boris/Desktop/Juego/PiedraPapelTijeras.html"> VUELVE A JUGAR</a> 
+</body>
+</html>
